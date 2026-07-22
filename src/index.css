@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #4F46E5;    /* Electric Indigo */
+  --color-secondary: #1E293B;  /* Deep Charcoal/Slate */
+  --color-accent: #BEF264;     /* Neon Lime */
+  --color-background: #0F172A; /* Darker Slate for premium feel */
+  --color-text: #F8FAFC;       /* Off-White for readability */
+}
