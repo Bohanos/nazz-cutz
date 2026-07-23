@@ -13,20 +13,12 @@ function App() {
   return (
     <div className="App">
       <Navbar onBookClick={() => setIsBookingOpen(true)} />
-      
-      {/* Passing the handler to open the modal */}
       <Hero onBookClick={() => setIsBookingOpen(true)} />
-      
       <Gallery />
-      
-      {/* Passing the handler to open the modal */}
       <ServicesGrid onBookClick={() => setIsBookingOpen(true)} />
-      
-      {/* Render the modal ONLY ONCE here */}
       {isBookingOpen && (
         <BookingModal onClose={() => setIsBookingOpen(false)} />
       )}
-      
       <LocationMap />
       <Footer />
     </div>
