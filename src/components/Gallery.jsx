@@ -23,25 +23,23 @@ export default function Gallery() {
         THE <span className="text-accent">VIBE</span>
       </h2>
       
-      <div className="relative max-w-6xl mx-auto">
-        <div 
-          className="flex transition-transform duration-1000 ease-in-out gap-6"
-          
-          style={{ transform: `translateX(-${currentIndex * 33.333}%)` }}
-        >
-          {galleryImages.map((img, index) => (
+      {/* Container restricted to show only one item */}
+      <div className="relative max-w-2xl mx-auto">
+        <div className="group relative overflow-hidden rounded-xl border border-slate-700 hover:border-accent transition-all duration-300">
+          <img 
+            src={galleryImages[currentIndex]} 
+            alt={`Nazz Cutz Gallery ${currentIndex + 1}`} 
+            className="w-full h-80 object-cover transition-opacity duration-1000 ease-in-out" 
+          />
+        </div>
+        
+        {/* Optional: Indicator dots to show progress */}
+        <div className="flex justify-center gap-2 mt-4">
+          {galleryImages.map((_, index) => (
             <div 
               key={index} 
-              className="min-w-full md:min-w-[50%] lg:min-w-[33.333%] flex-shrink-0"
-            >
-              <div className="group relative overflow-hidden rounded-xl border border-slate-700 hover:border-accent transition-all duration-300">
-                <img 
-                  src={img} 
-                  alt={`Nazz Cutz Gallery ${index + 1}`} 
-                  className="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            </div>
+              className={`h-2 w-2 rounded-full ${index === currentIndex ? 'bg-accent' : 'bg-slate-600'}`}
+            />
           ))}
         </div>
       </div>

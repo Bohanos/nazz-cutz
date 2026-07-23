@@ -12,19 +12,24 @@ export default function ServicesGrid({ onBookClick }) {
           PROFESSIONAL <span className="text-primary">SERVICES.</span>
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Added items-stretch to the grid container */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
           {services.map((service, index) => (
-            <button 
-              key={index} 
-              onClick={onBookClick}
-              className="bg-secondary p-8 rounded-2xl border border-accent hover:scale-105 transition-transform duration-300 flex flex-col justify-between text-left cursor-pointer w-full"
-            >
-              <div>
-                <h3 className="text-2xl font-black text-text mb-4">{service.name}</h3>
-                <p className="text-slate-400 mb-6">{service.desc}</p>
-              </div>
-              <div className="text-3xl font-black text-accent">{service.price}</div>
-            </button>
+            <a href="#booking">
+              <button 
+                key={index} 
+                onClick={onBookClick}
+                // Added h-full to make all buttons the same height
+                className="h-full bg-secondary p-8 rounded-2xl border border-accent hover:scale-105 transition-transform duration-300 flex flex-col justify-between text-left cursor-pointer w-full"
+              >
+                {/* Added flex-1 to this div so it occupies available space */}
+                <div className="flex-1">
+                  <h3 className="text-2xl font-black text-text mb-4">{service.name}</h3>
+                  <p className="text-slate-400 mb-6">{service.desc}</p>
+                </div>
+                <div className="text-3xl font-black text-accent mt-auto">{service.price}</div>
+              </button>
+            </a>
           ))}
         </div>
       </div>
