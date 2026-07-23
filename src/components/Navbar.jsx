@@ -1,4 +1,4 @@
-export default function Navbar() {
+export default function Navbar({ onBookClick }) {
   const googleFormUrl = "https://docs.google.com/forms/your-form-link-here";
   const logo = "https://res.cloudinary.com/z3qujb2c/image/upload/v1784601357/logo_ms9uie.jpg";
 
@@ -17,13 +17,13 @@ export default function Navbar() {
         <a href="#location" className="hover:text-lime-400 transition">LOCATION</a>
       </div>
 
-      <a 
-        href={googleFormUrl} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="bg-lime-400 text-slate-950 px-4 md:px-6 py-2 rounded-full text-xs md:text-sm font-bold hover:bg-lime-300 transition-transform active:scale-95"
-      >
-        GET IN LINE
+      <a href="#booking">
+        <button 
+          onClick={onBookClick}
+          className="bg-lime-400 text-slate-950 px-4 md:px-6 py-2 rounded-full text-xs md:text-sm font-bold hover:bg-lime-300 transition-transform active:scale-95"
+        >
+          GET IN LINE
+        </button>
       </a>
     </nav>
   );

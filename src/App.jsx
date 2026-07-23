@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      <Navbar onBookClick={() => setIsBookingOpen(true)} />
       
       {/* Passing the handler to open the modal */}
       <Hero onBookClick={() => setIsBookingOpen(true)} />
